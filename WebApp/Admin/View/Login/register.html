@@ -1,0 +1,67 @@
+<include file="Public/header"/>
+<body id="login-page">
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="login-box">
+				<div class="row">
+					<div class="col-xs-12">
+						<header id="login-header">
+						<div id="login-logo">
+							<img src="__IMG__/logo.png" alt=""/>
+						</div>
+						</header>
+						<div id="login-box-inner">
+							<notempty name="error_msg">
+								<div class="alert alert-danger">
+									<strong>Whoops!</strong> There were some problems with your input.<br><br>
+									<ul>
+										<volist name="error_msg" id="vo">
+											<li>{$vo}</li>
+										</volist>
+									</ul>
+								</div>
+							</notempty>
+							<form id="register" role="form" method="post">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user"></i></span>
+									<input id="name" class="form-control" type="text" name="name" value="{$info['name']}" placeholder="Full name">
+								</div>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input id="email" class="form-control" type="text" name="email" value="{$info['email']}" placeholder="Email address">
+								</div>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<input id="password" type="password" class="form-control" name="password" value="" placeholder="Enter password">
+								</div>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
+									<input id="repassword" type="password" class="form-control" name="repassword" value="" placeholder="Re-enter password">
+								</div>
+								<div id="remember-me-wrapper">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="checkbox-nice">
+												<input type="checkbox" id="terms" name="terms" checked="checked"/>
+												<label for="terms">
+													I accept terms and conditions
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row" id="Btn-div">
+									<div class="col-xs-12">
+										<button type="submit" class="btn btn-success col-xs-12">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public/footer"/>
