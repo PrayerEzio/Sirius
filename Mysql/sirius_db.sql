@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version: 5.6.17)
-# Date: 2015-11-02 20:25:06
+# Date: 2015-11-03 17:54:00
 # Generator: MySQL-Front 5.3  (Build 4.234)
 
 /*!40101 SET NAMES utf8 */;
@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS `sirius_admin`;
 CREATE TABLE `sirius_admin` (
   `admin_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `admin_name` varchar(255) DEFAULT NULL COMMENT '姓名',
+  `admin_avatar` varchar(255) DEFAULT NULL COMMENT '头像',
   `admin_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `password` varchar(255) DEFAULT NULL COMMENT '密码',
   `register_time` int(11) unsigned DEFAULT '0' COMMENT '注册时间',
@@ -21,14 +22,14 @@ CREATE TABLE `sirius_admin` (
   `admin_auth` text COMMENT '权限信息',
   `admin_status` varchar(255) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`admin_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='管理员表';
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 #
 # Data for table "sirius_admin"
 #
 
 /*!40000 ALTER TABLE `sirius_admin` DISABLE KEYS */;
-INSERT INTO `sirius_admin` VALUES (16,'Prayer','283386295@qq.com','b120acee576221618a8a2c73c6416db37b958422fde02df8a21e091afb59104b',1446453741,1446465837,'127.0.0.1',5,NULL,'1'),(20,'Ezio','513912489@qq.com','b120acee576221618a8a2c73c6416db37b958422fde02df8a21e091afb59104b',1446461060,1446462388,'127.0.0.1',2,NULL,'1');
+INSERT INTO `sirius_admin` VALUES (16,'Prayer',NULL,'283386295@qq.com','b120acee576221618a8a2c73c6416db37b958422fde02df8a21e091afb59104b',1446453741,1446512788,'127.0.0.1',6,NULL,'1'),(20,'Ezio',NULL,'513912489@qq.com','b120acee576221618a8a2c73c6416db37b958422fde02df8a21e091afb59104b',1446461060,1446462388,'127.0.0.1',2,NULL,'1');
 /*!40000 ALTER TABLE `sirius_admin` ENABLE KEYS */;
 
 #

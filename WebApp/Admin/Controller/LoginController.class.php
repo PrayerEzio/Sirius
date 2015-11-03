@@ -23,9 +23,10 @@ class LoginController extends BaseController {
 				if ($password == $info['password']) {
 					if ($info['admin_status'] == 1) {
 						session('admin_id',$info['admin_id']);
-						session('admin_email',$info['admin_email']);
+						session('Module',MODULE_NAME);
 						if ($_POST['remember']) {
 							cookie('admin_id',encrypt(session('admin_id')));
+							cookie('Module',encrypt(MODULE_NAME));
 							cookie('remember',1);
 						}
 						$this->adminModel->where($where)->setField('last_login_time',NOW_TIME);
@@ -91,7 +92,7 @@ class LoginController extends BaseController {
 				$result = $this->adminModel->add($data);
 				if ($result) {
 					session('admin_id',$result);
-					session('admin_email',$data['admin_email']);
+					session('Module',encrypt(MODULE_NAME));
 					$where['admin_id'] = $result;
 					$this->adminModel->where($where)->setField('last_login_time',NOW_TIME);
 					$this->adminModel->where($where)->setField('last_login_ip',get_client_ip());

@@ -8,11 +8,16 @@
  */
 function isLogin(){
 	if (session('admin_id')) {
-		return session('admin_id');
+		if (session('Module') == MODULE_NAME) {
+			return session('admin_id');;
+		}
 	}else {
-		if (cookie('remember') && cookie('admin_id')) {
-			session('admin_id',decrypt(cookie('admin_id')));
-			return session('admin_id');
+		if (cookie('remember') && cookie('admin_id') && cookie('Module')) {
+			if (decrypt(cookie('Module')) == MODULE_NAME) {
+				session('admin_id',decrypt(cookie('admin_id')));
+				session('Module',decrypt(cookie('Module')));
+				return session('admin_id');
+			}
 		}
 	}
 }
